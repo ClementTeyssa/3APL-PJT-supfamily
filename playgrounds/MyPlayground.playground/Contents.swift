@@ -1,7 +1,6 @@
 //: Playground - noun: a place where people can play
 
 import Foundation
-import PlaygroundSupport
 
 //    let url = "http://supinfo.steve-colinet.fr/supfamily/?action=login&username=admin&password=admin"
 //
@@ -66,6 +65,4 @@ requestAPI.resume()
 
 
 
-
-
-PlaygroundPage.current.needsIndefiniteExecution = true
+sleep(1)
