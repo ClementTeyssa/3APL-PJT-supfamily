@@ -70,3 +70,6 @@ fastlane/test_output
 .DS_Store
 SupFamily/SupFamily.xcodeproj/project.xcworkspace/xcuserdata/supinfo.xcuserdatad/UserInterfaceState.xcuserstate
 .DS_Store
+.DS_Store
+.DS_Store
+*.xcuserstate
