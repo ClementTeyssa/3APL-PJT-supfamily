@@ -53,3 +53,14 @@ func login(jsonR: JSONRequest) -> Bool {
     print(jsonR.family!.name)
     return true
 }
+
+func list(jsonR: JSONRequest) -> Family? {
+    if jsonR.success != nil {
+        print("Get List impossible")
+        return nil
+    }
+    
+    print(jsonR.family!.id)
+    //add in BDD
+    return jsonR.family
+}

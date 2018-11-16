@@ -37,7 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="getLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="zhU-yX-I0u"/>
+                                    <action selector="getLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Gx-Qh-jtA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxI-D2-Rkl">
@@ -54,25 +54,26 @@
                     <navigationItem key="navigationItem" id="UEN-Gb-Yqn"/>
                     <connections>
                         <outlet property="labelLogin" destination="TxI-D2-Rkl" id="gPe-bd-dyt"/>
+                        <outlet property="loginButton" destination="kKT-qk-af2" id="aOH-Hd-qDZ"/>
                         <outlet property="loginField" destination="gGu-A7-6X9" id="sIa-DE-pRQ"/>
                         <outlet property="passwordField" destination="cz1-hD-JgK" id="AIY-b6-D96"/>
-                        <segue destination="l5W-I4-0qK" kind="push" id="hgS-xk-K64"/>
+                        <segue destination="l5W-I4-0qK" kind="show" identifier="MembersList" id="rmA-2J-Pa6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="613.60000000000002" y="71.514242878560722"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Member Table View Controller-->
         <scene sceneID="nL4-sE-szo">
             <objects>
-                <tableViewController id="l5W-I4-0qK" sceneMemberID="viewController">
+                <tableViewController id="l5W-I4-0qK" customClass="MemberTableViewController" customModule="SupFamily" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mGK-7h-VqD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="C1J-K9-aoM">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="memberCell" id="C1J-K9-aoM">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C1J-K9-aoM" id="yuC-AV-IcF">

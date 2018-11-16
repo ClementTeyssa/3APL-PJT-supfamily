@@ -13,6 +13,7 @@
 		F12BE115219AEAA300444F28 /* SupFamily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F12BE113219AEAA300444F28 /* SupFamily.xcdatamodeld */; };
 		F12BE117219AEAA400444F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12BE116219AEAA400444F28 /* Assets.xcassets */; };
 		F12BE11A219AEAA400444F28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12BE118219AEAA400444F28 /* LaunchScreen.storyboard */; };
+		F1885FE6219DDA0E00710B32 /* MemberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1885FE5219DDA0E00710B32 /* MemberTableViewController.swift */; };
 		F1C9E79A219DAB6300E12296 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9E799219DAB6300E12296 /* Family.swift */; };
 		F1C9E79D219DAB7400E12296 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9E79C219DAB7400E12296 /* User.swift */; };
 		F1C9E7A1219DAD8C00E12296 /* ApiRESTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9E7A0219DAD8C00E12296 /* ApiRESTController.swift */; };
@@ -27,6 +28,7 @@
 		F12BE116219AEAA400444F28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F12BE119219AEAA400444F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F12BE11B219AEAA400444F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1885FE5219DDA0E00710B32 /* MemberTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewController.swift; sourceTree = "<group>"; };
 		F1C9E799219DAB6300E12296 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		F1C9E79C219DAB7400E12296 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F1C9E7A0219DAD8C00E12296 /* ApiRESTController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRESTController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				F12BE10E219AEAA300444F28 /* ViewController.swift */,
+				F1885FE5219DDA0E00710B32 /* MemberTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				F1C9E7A1219DAD8C00E12296 /* ApiRESTController.swift in Sources */,
 				F12BE115219AEAA300444F28 /* SupFamily.xcdatamodeld in Sources */,
 				F1C9E79A219DAB6300E12296 /* Family.swift in Sources */,
+				F1885FE6219DDA0E00710B32 /* MemberTableViewController.swift in Sources */,
 				F12BE10F219AEAA300444F28 /* ViewController.swift in Sources */,
 				F1C9E79D219DAB7400E12296 /* User.swift in Sources */,
 				F12BE10D219AEAA300444F28 /* AppDelegate.swift in Sources */,
