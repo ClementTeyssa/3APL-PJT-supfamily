@@ -37,7 +37,6 @@ class ViewController: UIViewController {
             labelLogin.text="Connection impossible cause requete retour"
         } else {
             labelLogin.text="connection done"
-            sleep(5)
             performSegue(withIdentifier: "MembersList", sender: loginButton)
         }
     }
@@ -45,7 +44,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let sender = sender as? UIButton else {return}
         
-        segue.destination.navigationItem.title = "test"
+        segue.destination.navigationItem.title = "Menbers List"
     }
     
 

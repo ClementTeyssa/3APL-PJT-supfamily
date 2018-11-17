@@ -39,7 +39,7 @@ func apiRequest(toPost:String) -> JSONRequest?{
     }
     
     requestAPI.resume()
-    sleep(5)
+    sleep(1)
     return resJSON
 }
 
@@ -60,7 +60,7 @@ func list(jsonR: JSONRequest) -> Family? {
         return nil
     }
     
-    print(jsonR.family!.id)
+    print(jsonR.family!.members![0].lasName)
     //add in BDD
     return jsonR.family
 }
