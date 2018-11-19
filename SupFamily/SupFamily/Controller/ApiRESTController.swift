@@ -64,3 +64,7 @@ func list(jsonR: JSONRequest) -> Family? {
     //add in BDD
     return jsonR.family
 }
+
+func removeMember(jsonR: JSONRequest) -> Bool{
+    return jsonR.success!
+}

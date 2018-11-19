@@ -31,7 +31,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKT-qk-af2">
                                 <rect key="frame" x="168" y="261" width="38" height="30"/>
@@ -93,6 +93,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaK-sj-vDJ">
                                             <rect key="frame" x="292" y="30" width="55" height="30"/>
                                             <state key="normal" title="Remove"/>
+                                            <connections>
+                                                <action selector="removeMember:" destination="C1J-K9-aoM" eventType="touchUpInside" id="bCO-G4-vNy"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -106,6 +109,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="memberInfo" destination="39z-0g-onb" id="jZv-pd-U2I"/>
+                                    <outlet property="removeMemberButton" destination="EaK-sj-vDJ" id="wkF-EE-9Gb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -114,16 +118,7 @@
                             <outlet property="delegate" destination="l5W-I4-0qK" id="hsM-oJ-7HR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bxG-2E-Vmk">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="hZU-sk-aoZ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RZd-tE-o2I">
-                                <rect key="frame" x="276" y="5.5" width="83" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Actualiser"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="bxG-2E-Vmk"/>
                     <connections>
                         <outlet property="view" destination="mGK-7h-VqD" id="qxW-dH-zDT"/>
                     </connections>

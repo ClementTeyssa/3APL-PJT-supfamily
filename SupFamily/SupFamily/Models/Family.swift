@@ -11,5 +11,5 @@ import Foundation
 struct Family: Decodable{
     let id: Int
     let name: String
-    let members: [User]?
+    var members: [User]?
 }

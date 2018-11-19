@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let sender = sender as? UIButton else {return}
         
-        segue.destination.navigationItem.title = "Menbers List"
+        segue.destination.navigationItem.title = "Members List"
     }
     
 
