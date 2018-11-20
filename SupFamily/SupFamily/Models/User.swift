@@ -14,4 +14,6 @@ struct User: Decodable{
     let firstName: String
     let latitude: Double?
     let longitude: Double?
+    var username: String?
+    var password: String?
 }

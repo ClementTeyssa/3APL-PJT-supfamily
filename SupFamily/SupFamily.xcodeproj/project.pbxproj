@@ -18,6 +18,7 @@
 		F1B7E2C321A4113800D238D2 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7E2C221A4113800D238D2 /* MapsViewController.swift */; };
 		F1B7E2C521A4169F00D238D2 /* ApiGoogleMapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7E2C421A4169F00D238D2 /* ApiGoogleMapsController.swift */; };
 		F1B7E2C721A416DE00D238D2 /* AddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7E2C621A416DE00D238D2 /* AddMemberViewController.swift */; };
+		F1B7E2CB21A4417E00D238D2 /* db.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7E2CA21A4417E00D238D2 /* db.swift */; };
 		F1C9E79A219DAB6300E12296 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9E799219DAB6300E12296 /* Family.swift */; };
 		F1C9E79D219DAB7400E12296 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9E79C219DAB7400E12296 /* User.swift */; };
 		F1C9E7A1219DAD8C00E12296 /* ApiRESTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9E7A0219DAD8C00E12296 /* ApiRESTController.swift */; };
@@ -41,6 +42,7 @@
 		F1B7E2C221A4113800D238D2 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapsViewController.swift; path = SupFamily/Models/MapsViewController.swift; sourceTree = SOURCE_ROOT; };
 		F1B7E2C421A4169F00D238D2 /* ApiGoogleMapsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiGoogleMapsController.swift; sourceTree = "<group>"; };
 		F1B7E2C621A416DE00D238D2 /* AddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberViewController.swift; sourceTree = "<group>"; };
+		F1B7E2CA21A4417E00D238D2 /* db.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = db.swift; sourceTree = "<group>"; };
 		F1C9E799219DAB6300E12296 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		F1C9E79C219DAB7400E12296 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F1C9E7A0219DAD8C00E12296 /* ApiRESTController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRESTController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		F12BE10B219AEAA300444F28 /* SupFamily */ = {
 			isa = PBXGroup;
 			children = (
+				F1B7E2C921A43FA000D238D2 /* DataBase */,
 				F1C9E79E219DABE500E12296 /* ViewController */,
 				F1C9E798219DAB4A00E12296 /* Controller */,
 				F1C9E797219DAB3E00E12296 /* Models */,
@@ -108,6 +111,14 @@
 				F12BE113219AEAA300444F28 /* SupFamily.xcdatamodeld */,
 			);
 			path = SupFamily;
+			sourceTree = "<group>";
+		};
+		F1B7E2C921A43FA000D238D2 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				F1B7E2CA21A4417E00D238D2 /* db.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		F1C9E797219DAB3E00E12296 /* Models */ = {
@@ -262,6 +273,7 @@
 				F1B7E2C321A4113800D238D2 /* MapsViewController.swift in Sources */,
 				F1885FE6219DDA0E00710B32 /* MemberTableViewController.swift in Sources */,
 				F12BE10F219AEAA300444F28 /* ViewController.swift in Sources */,
+				F1B7E2CB21A4417E00D238D2 /* db.swift in Sources */,
 				F1C9E79D219DAB7400E12296 /* User.swift in Sources */,
 				F12BE10D219AEAA300444F28 /* AppDelegate.swift in Sources */,
 			);

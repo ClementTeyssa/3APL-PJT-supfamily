@@ -8,6 +8,11 @@
 
 import Foundation
 
+class currentUser {
+    static var currentUserId: Int?
+    static var currentFamilyId: Int?
+}
+
 struct JSONRequest: Decodable{
     let family: Family?
     let user: User?
@@ -25,7 +30,6 @@ func apiRequest(toPost:String) -> JSONRequest?{
         
         guard let data = data else {
             print("Error: Request hasn't return data")
-            print(error)
             return
         }
         
@@ -43,15 +47,13 @@ func apiRequest(toPost:String) -> JSONRequest?{
     return resJSON
 }
 
-func login(jsonR: JSONRequest) -> Bool {
+func login(jsonR: JSONRequest) -> JSONRequest?{
     if jsonR.success != nil {
         print("Login impossible")
-        return false
+        return nil
     }
-    
-    //add in BDD
-    print(jsonR.family!.name)
-    return true
+
+    return jsonR
 }
 
 func list(jsonR: JSONRequest) -> Family? {

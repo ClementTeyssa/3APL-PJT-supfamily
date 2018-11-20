@@ -25,8 +25,8 @@ class MemberTableViewCell: UITableViewCell{
 }
 
 class MemberTableViewController : UITableViewController, MemberTableViewCellDelegate{
-   
-    
+    //DB
+    var db: OpaquePointer?
 
     //Pull to Refresh
     lazy var refreshC : UIRefreshControl = {

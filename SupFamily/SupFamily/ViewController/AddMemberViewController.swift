@@ -25,6 +25,7 @@ class AddMemberViewController: UIViewController {
         if(!addMemberr(jsonR: responseAdd)){
             resAddLabel.text="Add impossible"
         } else {
+            //insertMember(db: DataBaseSupFamily, member: User, familyId: currentUser.currentFamilyId)
             resAddLabel.text="Add done"
         }
     }
