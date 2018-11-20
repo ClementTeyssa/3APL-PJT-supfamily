@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelLogin: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,14 +31,13 @@ class ViewController: UIViewController {
         let postLogin = "action=login&username=\(String(describing: loginField.text!))&password=\(String(describing: passwordField.text!))"
 
         guard let responseLogin = apiRequest(toPost: postLogin) else {
-            labelLogin.text="Connection impossible echec requete"
+            labelLogin.text="Connection impossible"
             return
         }
 
         if(!login(jsonR: responseLogin)){
-            labelLogin.text="Connection impossible cause requete retour"
+            labelLogin.text="Wrong Login / Password"
         } else {
-            labelLogin.text="connection done"
             performSegue(withIdentifier: "MembersList", sender: loginButton)
         }
     }
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let sender = sender as? UIButton else {return}
         
-        segue.destination.navigationItem.title = "Members List"
+        segue.destination.navigationItem.title = "SupFamily"
     }
     
 

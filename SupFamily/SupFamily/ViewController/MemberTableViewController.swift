@@ -59,7 +59,7 @@ class MemberTableViewController : UITableViewController, MemberTableViewCellDele
         guard let responseList = apiRequest(toPost: postList) else {
             return
         }
-        
+
         family = list(jsonR: responseList)
         self.tableView.addSubview(self.refreshC)
     }

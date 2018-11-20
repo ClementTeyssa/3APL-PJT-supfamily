@@ -14,12 +14,20 @@
 		F12BE117219AEAA400444F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12BE116219AEAA400444F28 /* Assets.xcassets */; };
 		F12BE11A219AEAA400444F28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12BE118219AEAA400444F28 /* LaunchScreen.storyboard */; };
 		F1885FE6219DDA0E00710B32 /* MemberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1885FE5219DDA0E00710B32 /* MemberTableViewController.swift */; };
+		F1B1B4BB21A40BB200F846F7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F1B1B4BA21A40BB200F846F7 /* Podfile */; };
+		F1B7E2C321A4113800D238D2 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7E2C221A4113800D238D2 /* MapsViewController.swift */; };
+		F1B7E2C521A4169F00D238D2 /* ApiGoogleMapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7E2C421A4169F00D238D2 /* ApiGoogleMapsController.swift */; };
+		F1B7E2C721A416DE00D238D2 /* AddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7E2C621A416DE00D238D2 /* AddMemberViewController.swift */; };
 		F1C9E79A219DAB6300E12296 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9E799219DAB6300E12296 /* Family.swift */; };
 		F1C9E79D219DAB7400E12296 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9E79C219DAB7400E12296 /* User.swift */; };
 		F1C9E7A1219DAD8C00E12296 /* ApiRESTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9E7A0219DAD8C00E12296 /* ApiRESTController.swift */; };
+		FF902A44EB0A7E5E84E7E48C /* libPods-SupFamily.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95343D0D2D65CD86DAE12C79 /* libPods-SupFamily.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95343D0D2D65CD86DAE12C79 /* libPods-SupFamily.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SupFamily.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCCCB51883B1BE6367AE0426 /* Pods-SupFamily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupFamily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SupFamily/Pods-SupFamily.debug.xcconfig"; sourceTree = "<group>"; };
+		C47593FFE0486233382EAC66 /* Pods-SupFamily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupFamily.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupFamily/Pods-SupFamily.release.xcconfig"; sourceTree = "<group>"; };
 		F12BE109219AEAA300444F28 /* SupFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12BE10C219AEAA300444F28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12BE10E219AEAA300444F28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +37,10 @@
 		F12BE119219AEAA400444F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F12BE11B219AEAA400444F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1885FE5219DDA0E00710B32 /* MemberTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewController.swift; sourceTree = "<group>"; };
+		F1B1B4BA21A40BB200F846F7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F1B7E2C221A4113800D238D2 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapsViewController.swift; path = SupFamily/Models/MapsViewController.swift; sourceTree = SOURCE_ROOT; };
+		F1B7E2C421A4169F00D238D2 /* ApiGoogleMapsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiGoogleMapsController.swift; sourceTree = "<group>"; };
+		F1B7E2C621A416DE00D238D2 /* AddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberViewController.swift; sourceTree = "<group>"; };
 		F1C9E799219DAB6300E12296 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		F1C9E79C219DAB7400E12296 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F1C9E7A0219DAD8C00E12296 /* ApiRESTController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRESTController.swift; sourceTree = "<group>"; };
@@ -39,17 +51,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF902A44EB0A7E5E84E7E48C /* libPods-SupFamily.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224F3687B13DD01F0CCDC6C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95343D0D2D65CD86DAE12C79 /* libPods-SupFamily.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B78167CAE31B5AAAF981FC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCCCB51883B1BE6367AE0426 /* Pods-SupFamily.debug.xcconfig */,
+				C47593FFE0486233382EAC66 /* Pods-SupFamily.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F12BE100219AEAA300444F28 = {
 			isa = PBXGroup;
 			children = (
+				F1B1B4BA21A40BB200F846F7 /* Podfile */,
 				F12BE10B219AEAA300444F28 /* SupFamily */,
 				F12BE10A219AEAA300444F28 /* Products */,
+				9B78167CAE31B5AAAF981FC8 /* Pods */,
+				224F3687B13DD01F0CCDC6C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				F1C9E7A0219DAD8C00E12296 /* ApiRESTController.swift */,
+				F1B7E2C421A4169F00D238D2 /* ApiGoogleMapsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -99,6 +133,8 @@
 			children = (
 				F12BE10E219AEAA300444F28 /* ViewController.swift */,
 				F1885FE5219DDA0E00710B32 /* MemberTableViewController.swift */,
+				F1B7E2C221A4113800D238D2 /* MapsViewController.swift */,
+				F1B7E2C621A416DE00D238D2 /* AddMemberViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -110,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F12BE11E219AEAA400444F28 /* Build configuration list for PBXNativeTarget "SupFamily" */;
 			buildPhases = (
+				CB504713D83D4A19CB8BE509 /* [CP] Check Pods Manifest.lock */,
 				F12BE105219AEAA300444F28 /* Sources */,
 				F12BE106219AEAA300444F28 /* Frameworks */,
 				F12BE107219AEAA300444F28 /* Resources */,
+				015B531CB1659FF3FBA1321E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,11 +201,53 @@
 			files = (
 				F12BE11A219AEAA400444F28 /* LaunchScreen.storyboard in Resources */,
 				F12BE117219AEAA400444F28 /* Assets.xcassets in Resources */,
+				F1B1B4BB21A40BB200F846F7 /* Podfile in Resources */,
 				F12BE112219AEAA300444F28 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		015B531CB1659FF3FBA1321E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SupFamily/Pods-SupFamily-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SupFamily/Pods-SupFamily-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB504713D83D4A19CB8BE509 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SupFamily-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F12BE105219AEAA300444F28 /* Sources */ = {
@@ -176,7 +256,10 @@
 			files = (
 				F1C9E7A1219DAD8C00E12296 /* ApiRESTController.swift in Sources */,
 				F12BE115219AEAA300444F28 /* SupFamily.xcdatamodeld in Sources */,
+				F1B7E2C721A416DE00D238D2 /* AddMemberViewController.swift in Sources */,
 				F1C9E79A219DAB6300E12296 /* Family.swift in Sources */,
+				F1B7E2C521A4169F00D238D2 /* ApiGoogleMapsController.swift in Sources */,
+				F1B7E2C321A4113800D238D2 /* MapsViewController.swift in Sources */,
 				F1885FE6219DDA0E00710B32 /* MemberTableViewController.swift in Sources */,
 				F12BE10F219AEAA300444F28 /* ViewController.swift in Sources */,
 				F1C9E79D219DAB7400E12296 /* User.swift in Sources */,
@@ -322,6 +405,7 @@
 		};
 		F12BE11F219AEAA400444F28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCCCB51883B1BE6367AE0426 /* Pods-SupFamily.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -339,6 +423,7 @@
 		};
 		F12BE120219AEAA400444F28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C47593FFE0486233382EAC66 /* Pods-SupFamily.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

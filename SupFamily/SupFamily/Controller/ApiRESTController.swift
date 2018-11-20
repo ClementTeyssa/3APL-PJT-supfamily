@@ -66,5 +66,11 @@ func list(jsonR: JSONRequest) -> Family? {
 }
 
 func removeMember(jsonR: JSONRequest) -> Bool{
+    //remove in DB
+    return jsonR.success!
+}
+
+func addMemberr(jsonR: JSONRequest) -> Bool{
+    //add in DB
     return jsonR.success!
 }
