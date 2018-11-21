@@ -26,8 +26,8 @@ class MemberTableViewCell: UITableViewCell{
 
 class MemberTableViewController : UITableViewController, MemberTableViewCellDelegate{
     //DB
-    var db: OpaquePointer?
-
+    var ApiRest = ApiRESTController()
+    
     //Pull to Refresh
     lazy var refreshC : UIRefreshControl = {
         
@@ -54,13 +54,12 @@ class MemberTableViewController : UITableViewController, MemberTableViewCellDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let postList = "action=list&username=admin&password=admin"
-        
-        guard let responseList = apiRequest(toPost: postList) else {
-            return
+        if let resList = ApiRest.list() {
+            family = resList
+        } else {
+            print("List not disponible")
         }
-
-        family = list(jsonR: responseList)
+        
         self.tableView.addSubview(self.refreshC)
     }
     
@@ -110,18 +109,18 @@ class MemberTableViewController : UITableViewController, MemberTableViewCellDele
         //supprimer de la base et de l'api dans le cas ou la requete HTTP reussie
         guard let removedMember = tableView.indexPath(for: sender) else {return}
 
-        let postRemove = "action=remove&username=admin&password=admin&memberId=\(family!.members![removedMember.row].userId)"
-        
-        guard let responseRemove = apiRequest(toPost: postRemove) else {
-            //afficher un mesage erreur pas de reponse de l'api
-            return
-        }
-        
-        if(!removeMember(jsonR: responseRemove)){
-            print("succes false")
-        } else {
-            family?.members?.remove(at: removedMember.row)
-            tableView.deleteRows(at: [removedMember], with: .automatic)
-        }
+//        let postRemove = "action=remove&username=admin&password=admin&memberId=\(family!.members![removedMember.row].userId)"
+//        
+//        guard let responseRemove = apiRequest(toPost: postRemove) else {
+//            //afficher un mesage erreur pas de reponse de l'api
+//            return
+//        }
+//        
+//        if(!removeMember(jsonR: responseRemove)){
+//            print("succes false")
+//        } else {
+//            family?.members?.remove(at: removedMember.row)
+//            tableView.deleteRows(at: [removedMember], with: .automatic)
+//        }
     }
 }

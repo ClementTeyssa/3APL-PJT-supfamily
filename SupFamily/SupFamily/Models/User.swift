@@ -9,7 +9,7 @@
 import Foundation
 
 struct User: Decodable{
-    let userId: Int
+    var userId: Int
     let lasName: String
     let firstName: String
     let latitude: Double?

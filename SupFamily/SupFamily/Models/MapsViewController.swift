@@ -19,26 +19,28 @@ class MapsViewController: UIViewController{
         
         var family: Family?
         let APIGoogleMapsKey = "AIzaSyDNcD-45wpSyRKHCqoAXPNwN7isZLrHT_8"
-        
-        let postPosition = "action=getPosition&username=admin&password=admin"
-        
-        if let responsePosition = apiRequest(toPost: postPosition){
-            family = responsePosition.family
-        }
-        
-        GMSServices.provideAPIKey(APIGoogleMapsKey)
-        
-        for member in (family?.members!)!{
-            let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: member.latitude!, longitude: member.longitude!)
-            marker.title = member.firstName
-            marker.snippet = member.lasName
-            marker.map = mapView
-            
-        }
-        
-        let camera = GMSCameraPosition.camera(withLatitude: (family?.members![0].latitude)!, longitude: (family?.members![0].longitude)!, zoom: 10)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
+//        
+//        let postPosition = "action=getPosition&username=admin&password=admin"
+//        
+//        if let responsePosition = apiRequest(toPost: postPosition){
+//            family = responsePosition.family
+//        }
+//        
+//        GMSServices.provideAPIKey(APIGoogleMapsKey)
+//        
+//       
+//        
+//        let camera = GMSCameraPosition.camera(withLatitude: (family?.members![0].latitude)!, longitude: (family?.members![0].longitude)!, zoom: 10)
+//        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+//        view = mapView
+//        
+//        for member in (family?.members!)!{
+//            let marker = GMSMarker()
+//            marker.position = CLLocationCoordinate2D(latitude: member.latitude!, longitude: member.longitude!)
+//            marker.title = member.firstName
+//            marker.snippet = member.lasName
+//            marker.map = mapView
+//            
+//        }
     }
 }

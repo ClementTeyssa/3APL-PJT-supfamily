@@ -8,10 +8,6 @@
 
 import Foundation
 
-class currentUser {
-    static var currentUserId: Int?
-    static var currentFamilyId: Int?
-}
 
 struct JSONRequest: Decodable{
     let family: Family?
@@ -19,60 +15,111 @@ struct JSONRequest: Decodable{
     let success: Bool?
 }
 
-func apiRequest(toPost:String) -> JSONRequest?{
-    let url = "http://supinfo.steve-colinet.fr/supfamily/"
-    let request = NSMutableURLRequest(url: URL(string: url)!)
-    request.httpMethod = "POST"
-    request.httpBody = toPost.data(using: String.Encoding.utf8)
-    var resJSON: JSONRequest? = nil
+
+
+class ApiRESTController {
+    static var currentUserId: Int = 0
+    static var currentFamilyId: Int = 0
     
-    let requestAPI = URLSession.shared.dataTask(with: request as URLRequest) {data, response, error in
+    func apiRequest(toPost:String) -> JSONRequest?{
+        let url = "http://supinfo.steve-colinet.fr/supfamily/"
+        let request = NSMutableURLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.httpBody = toPost.data(using: String.Encoding.utf8)
+        var resJSON: JSONRequest? = nil
         
-        guard let data = data else {
-            print("Error: Request hasn't return data")
-            return
+        let requestAPI = URLSession.shared.dataTask(with: request as URLRequest) {data, response, error in
+            
+            guard let data = data else {
+                print("Error: Request hasn't return data")
+                return
+            }
+            
+            //decodage
+            guard let json = try? JSONDecoder().decode(JSONRequest.self, from: data) else {
+                print("Error: Couldn't decode data")
+                return
+            }
+            
+            resJSON=json
         }
         
-        //decodage
-        guard let json = try? JSONDecoder().decode(JSONRequest.self, from: data) else {
-            print("Error: Couldn't decode data")
-            return
+        requestAPI.resume()
+        sleep(1)
+        return resJSON
+    }
+    
+    func login(usernameF: String, passwordF: String) -> Bool{
+        let postLogin = "action=login&username=\(usernameF)&password=\(passwordF)"
+
+        guard let responseLogin = apiRequest(toPost: postLogin) else {
+            print("Login APIRest failed ")
+            return false
         }
         
-        resJSON=json
+        if responseLogin.success != nil {
+            print("Wrong Login / password")
+            return false
+        }
+        
+        initDbTables(db: DataBaseSupFamily.db!)
+        ApiRESTController.currentUserId = (responseLogin.user?.userId)!
+        ApiRESTController.currentFamilyId = (responseLogin.family?.id)!
+        insertUser(db: DataBaseSupFamily.db!, userId: (responseLogin.user?.userId)!, username: usernameF, password: passwordF)
+        insertFamily(db: DataBaseSupFamily.db!, family: responseLogin.family!)
+        insertMember(db: DataBaseSupFamily.db!, member: responseLogin.user!, familyId: (responseLogin.family?.id)!)
+        print("Login succes")
+        return true
     }
     
-    requestAPI.resume()
-    sleep(1)
-    return resJSON
-}
-
-func login(jsonR: JSONRequest) -> JSONRequest?{
-    if jsonR.success != nil {
-        print("Login impossible")
-        return nil
-    }
-
-    return jsonR
-}
-
-func list(jsonR: JSONRequest) -> Family? {
-    if jsonR.success != nil {
-        print("Get List impossible")
-        return nil
+    
+    func list() -> Family? {
+        let user = selectUser(db: DataBaseSupFamily.db!, id: ApiRESTController.currentUserId)
+        let postList = "action=list&username=\(user.username!)&password=\(user.password!)"
+        print(postList)
+        guard let responseList = apiRequest(toPost: postList) else {
+            print("Get List impossible")
+            return nil
+        }
+        
+        guard let family = responseList.family else {
+            print("Request success false")
+            return nil
+        }
+        
+        updateList(db: DataBaseSupFamily.db!, list: family)
+        
+        return family
     }
     
-    print(jsonR.family!.members![0].lasName)
-    //add in BDD
-    return jsonR.family
+    func removeMember(jsonR: JSONRequest) -> Bool{
+        let postRemove = "action=remove&username=admin&password=admin&memberId=\(family!.members![removedMember.row].userId)"
+        
+        guard let responseRemove = apiRequest(toPost: postRemove) else {
+            //afficher un mesage erreur pas de reponse de l'api
+            return
+        }
+    
+        if(!removeMember(jsonR: responseRemove)){
+            print("succes false")
+        } else {
+            family?.members?.remove(at: removedMember.row)
+            tableView.deleteRows(at: [removedMember], with: .automatic)
+        }
+        
+        return jsonR.success!
+    }
+    
+    func addMemberr(jsonR: JSONRequest) -> Bool{
+        //add in DB
+        return jsonR.success!
+    }
+    
+    func updateLocation(jsonR: JSONRequest) -> Bool{
+        return jsonR.success!
+    }
+    
 }
 
-func removeMember(jsonR: JSONRequest) -> Bool{
-    //remove in DB
-    return jsonR.success!
-}
 
-func addMemberr(jsonR: JSONRequest) -> Bool{
-    //add in DB
-    return jsonR.success!
-}
+

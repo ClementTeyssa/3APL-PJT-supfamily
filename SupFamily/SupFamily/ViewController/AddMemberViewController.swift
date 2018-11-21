@@ -15,19 +15,19 @@ class AddMemberViewController: UIViewController {
     @IBOutlet weak var resAddLabel: UILabel!
     
     @IBAction func addMember(_ sender: Any){
-        let postAdd = "action=add&username=admin&password=admin&memberCode=1"
-        
-        guard let responseAdd = apiRequest(toPost: postAdd) else {
-            resAddLabel.text="Connection impossible"
-            return
-        }
-        
-        if(!addMemberr(jsonR: responseAdd)){
-            resAddLabel.text="Add impossible"
-        } else {
-            //insertMember(db: DataBaseSupFamily, member: User, familyId: currentUser.currentFamilyId)
-            resAddLabel.text="Add done"
-        }
+//        let postAdd = "action=add&username=admin&password=admin&memberCode=1"
+//        
+//        guard let responseAdd = apiRequest(toPost: postAdd) else {
+//            resAddLabel.text="Connection impossible"
+//            return
+//        }
+//        
+//        if(!addMemberr(jsonR: responseAdd)){
+//            resAddLabel.text="Add impossible"
+//        } else {
+//            //insertMember(db: DataBaseSupFamily, member: User, familyId: currentUser.currentFamilyId)
+//            resAddLabel.text="Add done"
+//        }
     }
     
 }

@@ -89,6 +89,11 @@ func insertUser(db : OpaquePointer, userId: Int, username: String, password: Str
 func insertFamily(db : OpaquePointer, family : Family) {
     let insertString = "INSERT INTO Family VALUES (\"\(family.id)\", \"\(family.name)\")"
     insertRequest(db: db, insertStatementString: insertString)
+    
+    guard let resFamily = family.members else {
+        return
+    }
+    
     for user in family.members! {
         print(user.firstName)
         insertMember(db: DataBaseSupFamily.db!, member: user, familyId: family.id)
@@ -115,7 +120,10 @@ func insertMember(db : OpaquePointer, member : User, familyId: Int) {
     insertRequest(db: db, insertStatementString: insertString)
 }
 
-
+func updateLocation(db: OpaquePointer, userId: Int, latitude: Double, longitude: Double){
+    let updateString = "UPDATE Member SET latitude = \"\(latitude)\" AND longitude = \"\(longitude)\" WHERE userId = \"\(userId)\""
+    updateRequest(db: db, updateStatementString: updateString)
+}
 
 /*func updateUser(db : OpaquePointer, user : User) {
     let updateString = "UPDATE User SET username = \(user.username) AND password = \(user.password) WHERE userId = \(user.userId)"
@@ -145,7 +153,7 @@ func updateMember(db : OpaquePointer, member : User) {
 func deleteMember(db : OpaquePointer, member : User) {
     let deleteString = "DELETE FROM Member WHERE userId = \(member.userId)"
     deleteRequest(db: db, deleteStatementString: deleteString)
-}
+}*/
 
 func selectUser(db : OpaquePointer, id : Int) -> User {
     var userId : Int?
@@ -155,7 +163,7 @@ func selectUser(db : OpaquePointer, id : Int) -> User {
     var firstName : String?
     var latitude : Double?
     var longitude : Double?
-    var familyId : Int?
+    //var familyId : Int?
     var queryStatement: OpaquePointer? = nil
     let queryStatementString = "SELECT * FROM User WHERE userId = \(id)"
     if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
@@ -178,7 +186,7 @@ func selectUser(db : OpaquePointer, id : Int) -> User {
             firstName = String(cString : sqlite3_column_text(queryStatement2, 2))
             latitude = sqlite3_column_double(queryStatement2, 3)
             longitude = sqlite3_column_double(queryStatement2, 4)
-            familyId = Int(sqlite3_column_int(queryStatement, 5))
+            //familyId = Int(sqlite3_column_int(queryStatement, 5))
         } else {
             print("Query returned no results")
         }
@@ -186,10 +194,38 @@ func selectUser(db : OpaquePointer, id : Int) -> User {
         print("SELECT statement could not be prepared")
     }
     sqlite3_finalize(queryStatement2)
-    return User(userId: userId!, username: username!, password: password!, lasName: lasName!, firstName: firstName!, latitude: latitude!, longitude: longitude!, familyId: familyId!)
+    print(latitude)
+    print(password)
+    print(lasName)
+    if latitude == nil && password! == nil {
+        return User(userId: userId!, lasName: lasName!, firstName: firstName!, latitude: nil, longitude: nil, username: nil, password: nil)
+    } else if latitude == nil {
+        return User(userId: userId!, lasName: lasName!, firstName: firstName!, latitude: nil, longitude: nil, username: username!, password: password!)
+    }
+        return User(userId: userId!, lasName: lasName!, firstName: firstName!, latitude: latitude!, longitude: longitude!, username: username!, password: password!)
+
+    
 }
 
-func selectFamily(db : OpaquePointer, id : Int) -> Family {
+func updateList(db : OpaquePointer, list : Family ) {
+    var latitude: String = "null"
+    var longitude: String = "null"
+    
+    for member in list.members! {
+        if member.latitude != nil {latitude=String(member.latitude!)}
+        else {latitude="null"}
+        
+        if member.longitude != nil {longitude=String(member.longitude!)}
+        else {longitude="null"}
+        
+        let insertString = "INSERT INTO Member VALUES (\(member.userId), \"\(member.lasName)\", \"\(member.firstName)\", \"\(latitude)\", \"\(longitude)\", \(list.id))"
+        let updateString = "UPDATE Member SET lasName = \"\(member.lasName)\" AND firstName = \"\(member.firstName)\" AND latitude = \"\(latitude)\" AND longitude = \"\(longitude)\" AND familyId = \(list.id) WHERE userId = \(member.userId) AND EXISTS (SELECT userId FROM Member WHERE userId = \(member.userId))"
+        insertRequest(db: db, insertStatementString: insertString)
+        updateRequest(db: db, updateStatementString: updateString)
+    }
+}
+
+/*func selectFamily(db : OpaquePointer, id : Int) -> Family {
     var familyId : Int?
     var familyName : String?
     var queryStatement: OpaquePointer? = nil
@@ -223,7 +259,7 @@ func insertRequest(db : OpaquePointer, insertStatementString : String) {
     sqlite3_finalize(insertStatement)
 }
  
- /*func queryRequest(db : OpaquePointer, queryStatementString : String) {
+ func queryRequest(db : OpaquePointer, queryStatementString : String) {
     var queryStatement: OpaquePointer? = nil
     if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
         if sqlite3_step(queryStatement) == SQLITE_ROW {
@@ -267,4 +303,4 @@ func deleteRequest(db : OpaquePointer, deleteStatementString : String) {
 
 func closeDatabase(db : OpaquePointer) {
     sqlite3_close(db)
-}*/
+}

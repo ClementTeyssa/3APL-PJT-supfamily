@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1181AFE21A53E42008D2C60 /* currentLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1181AFD21A53E42008D2C60 /* currentLocationController.swift */; };
 		F12BE10D219AEAA300444F28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12BE10C219AEAA300444F28 /* AppDelegate.swift */; };
 		F12BE10F219AEAA300444F28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12BE10E219AEAA300444F28 /* ViewController.swift */; };
 		F12BE112219AEAA300444F28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12BE110219AEAA300444F28 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		95343D0D2D65CD86DAE12C79 /* libPods-SupFamily.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SupFamily.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCCB51883B1BE6367AE0426 /* Pods-SupFamily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupFamily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SupFamily/Pods-SupFamily.debug.xcconfig"; sourceTree = "<group>"; };
 		C47593FFE0486233382EAC66 /* Pods-SupFamily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupFamily.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupFamily/Pods-SupFamily.release.xcconfig"; sourceTree = "<group>"; };
+		F1181AFD21A53E42008D2C60 /* currentLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentLocationController.swift; sourceTree = "<group>"; };
 		F12BE109219AEAA300444F28 /* SupFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12BE10C219AEAA300444F28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12BE10E219AEAA300444F28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				F1C9E7A0219DAD8C00E12296 /* ApiRESTController.swift */,
 				F1B7E2C421A4169F00D238D2 /* ApiGoogleMapsController.swift */,
+				F1181AFD21A53E42008D2C60 /* currentLocationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				F12BE10F219AEAA300444F28 /* ViewController.swift in Sources */,
 				F1B7E2CB21A4417E00D238D2 /* db.swift in Sources */,
 				F1C9E79D219DAB7400E12296 /* User.swift in Sources */,
+				F1181AFE21A53E42008D2C60 /* currentLocationController.swift in Sources */,
 				F12BE10D219AEAA300444F28 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
