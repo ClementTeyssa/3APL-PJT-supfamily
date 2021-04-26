@@ -9,7 +9,7 @@ Pour lancer le projet, il suffit de télécharger le projet, l'extraire, puis la
 
 -----------------
 
-###Liste des fonctionnalités
+### Liste des fonctionnalités
 
 - Login/Logout
 - Mise à jour de la position toutes les minutes
@@ -21,7 +21,7 @@ Pour lancer le projet, il suffit de télécharger le projet, l'extraire, puis la
 
 -----------------
 
-###Fonctionnalités détaillées
+### Fonctionnalités détaillées
 
 
 - Login/Logout
