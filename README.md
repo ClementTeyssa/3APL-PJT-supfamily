@@ -1,4 +1,4 @@
-#SupFamily
+# Project release SupFamily for 3APL course
 
 Projet SUPINFO réalisé par :
 - Axel KIMMEL (295114)
